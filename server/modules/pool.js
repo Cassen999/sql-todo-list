@@ -5,7 +5,7 @@ const Pool = pg.Pool;
 
 // Make our own instance of a Pool from that template Pool object
 const pool = new Pool({
-    database: 'todo_tasks', // Add in database name
+    database: 'weekend-to-do-app', // Add in database name
     host: 'localhost', // connect to our local computer
     port: 5432, // port number, this is the default
     max: 10, // max number of connections

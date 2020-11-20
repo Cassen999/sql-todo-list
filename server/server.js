@@ -5,7 +5,7 @@ const app = express();
 
 // Setup body parser - to translating request body into JSON
 app.use( bodyParser.urlencoded({ extended: true }));
-// app.use( bodyParser.json() );
+app.use( bodyParser.json() );
 app.use(express.static('server/public'));
 
 // Routes would go here

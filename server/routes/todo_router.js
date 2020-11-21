@@ -36,6 +36,23 @@ router.post('/', (req, res) => {
     })
 }) // end POST response
 
+// Create DELETE response to client side
+router.delete('/:taskId', (req, res) => {
+    // create id for taskId to be used from client
+    let id = req.params.taskId;
+    console.log(`Using ${id} to delete task...`);
+    let sqlText = `DELETE FROM todo WHERE id=$1;`
+    pool.query(sqlText, [id])
+        .then((result) => {
+            // Send OK status to tell client side DELETE
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('ERROR from db', error);
+            res.sendStatus(500);
+        })
+}) // End DELETE response
+
 
 
 

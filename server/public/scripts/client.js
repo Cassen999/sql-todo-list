@@ -8,6 +8,10 @@ function onReady() {
     // Click handler for POST request
     $('#add-btn').on('click', postTaskList);
 
+    // Click handler for DELETE request
+    // Call getDeleteId to get ID for DELETE request
+    $('#task-table').on('click', '.delete-btn', getDeleteId);
+
     getTask();
 }
 
@@ -64,3 +68,29 @@ function postTaskList() {
         alert('ERROR, try again' )
     })
 } // End POST request
+
+// Get the Id of the task for DELETE function
+function getDeleteId() {
+    console.log('Getting task id for delete');
+    // Make taskId target the db task id
+    taskId = $(this).closest('tr').data('id');
+    // Call delete function
+    deleteTask(taskId);
+} // End getDeleteId function
+
+// Create DELETE function using taskId
+function deleteTask(taskId) {
+    // ajax request
+    $.ajax({
+        method: 'DELETE',
+        url: `/todoList/${taskId}`
+    })
+    .then(function(response) {
+        // After OK status, getTask to refresh list
+        getTask();
+    })
+    .catch(function(error) {
+        console.log('ERROR, try again',error);
+        alert('ERROR, try again' )
+    })
+} // End DELETE function

@@ -14,7 +14,8 @@ function onReady() {
 
     // Click handler for Complete Task
     // Call getPutId for PUT request
-    $('#task-table').on('click', '.complete-btn', getPutId);
+        $(this).addClass('completed');
+        $('#task-table').on('click', '.complete-btn', $(this).addClass('completed'),getPutId);
 
     getTask();
 }
@@ -34,16 +35,27 @@ function getTask() {
 
         // Loop through response to append table data
         for (let i = 0; i < response.length; i++) {
+            // let $tr = $(`<tr data-id="${response[i].id}"></tr>`)
+            // if (response[i].complete === 'true'){
+            //     $(this).closest('tr').addClass('completed');
+            // }
+            // $tr.append(`<td>${response[i].task}</td>`);
+            // $tr.append(`<td>${response[i].complete}</td>`);
+            // $tr.append(`<td>
+            //     <button class="complete-btn btn btn-success">Task Complete</button>
+            //     <button class="delete-btn btn btn-danger">Delete Task</button>
+            //     </td>`);
+
             $('#task-table').append(`
-                <tr data-id="${response[i].id}">
-                    <td>${response[i].task}</td>
-                    <td>${response[i].complete}</td>
-                    <td>
-                        <button class="complete-btn">Task Complete</button>
-                        <button class="delete-btn">Delete Task</button>
-                    </td>
-                </tr>
-            `);
+            <tr data-id="${response[i].id}" class="complete-${response[i].complete}">
+                <td>${response[i].task}</td>
+                <td>${response[i].complete}</td>
+                <td>
+                    <button class="complete-btn btn btn-success">Task Complete</button>
+                    <button class="delete-btn btn btn-danger">Delete Task</button>
+                </td>
+            </tr>
+        `);
         }
     });
 } // end GET ROUTE
@@ -110,6 +122,7 @@ function getPutId() {
 
 function completeTask(taskId) {
     // ajax request
+    $(this).closest('tr').addClass('completed');
     $.ajax({
         method: 'PUT',
         url: `/todoList/${taskId}`

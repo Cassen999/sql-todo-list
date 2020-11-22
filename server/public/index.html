@@ -15,14 +15,15 @@
         <label for="task">Task:</label>
         <input id="task-in" type="text" placeholder="Task" maxlength="100"/>
 
-        <button id="add-btn">Add to list</button>
+        <button class="btn btn-primary" id="add-btn">Add to list</button>
     </form>
     <h2>To-Do List</h2>
-    <table id="table-headers">
-        <thead>
+    <table class="table table-light table-bordered table-hover" id="table-headers">
+        <thead class="thead-dark">
             <tr>
                 <th>Task</th>
                 <th>Completed?</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody id="task-table"></tbody>

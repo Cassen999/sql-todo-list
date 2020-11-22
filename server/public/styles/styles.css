@@ -1,0 +1,19 @@
+body {
+    background-color: #ebb5d4;
+    margin: 1rem auto;
+    font-family: american typewriter;
+    font-size: 20px;
+    width: 50rem;
+}
+
+h1, h2, #task-list {
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: chalkduster;
+}
+
+.complete-true {
+    background-color: rgb(72, 172, 72);
+}

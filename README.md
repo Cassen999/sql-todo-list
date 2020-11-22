@@ -30,12 +30,34 @@ In order to get this application up and running, follow these steps
 
 This application is used to add tasks that must be completed to a to do list, show whether or not they are completed, and be deleted whenever the user would like.
 
+## Built with
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- Nodejs
+- SQL
+- Express
+- JQuery
+
 ## License
 
 MIT
+TODO List
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Acknowledgement
 
 Thank you to Prime Digital Academy for teaching me the skills needed to create this application.
 
 Thank you to my classmates Lara Lesar and John Micko who helped me troubleshoot issues
+
+## Support
+
+If you have any suggestions or issues that come up, please feel free to send me an email at cassenpt@gmail.com

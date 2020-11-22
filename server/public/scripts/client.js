@@ -12,6 +12,10 @@ function onReady() {
     // Call getDeleteId to get ID for DELETE request
     $('#task-table').on('click', '.delete-btn', getDeleteId);
 
+    // Click handler for Complete Task
+    // Call getPutId for PUT request
+    $('#task-table').on('click', '.complete-btn', getPutId);
+
     getTask();
 }
 
@@ -94,3 +98,28 @@ function deleteTask(taskId) {
         alert('ERROR, try again' )
     })
 } // End DELETE function
+
+// Get the Id of the task for PUT function
+function getPutId() {
+    console.log('Getting task id for PUT');
+    // Make taskId target the db task id
+    taskId = $(this).closest('tr').data('id');
+    // Call completeTask function
+    completeTask(taskId);
+} // End getPutId function
+
+function completeTask(taskId) {
+    // ajax request
+    $.ajax({
+        method: 'PUT',
+        url: `/todoList/${taskId}`
+    })
+    .then(function(response) {
+        // After OK status, getTask to refresh list
+        getTask();
+    })
+    .catch(function(error) {
+        console.log('ERROR, try again',error);
+        alert('ERROR, try again' )
+    })
+} // End PUT function

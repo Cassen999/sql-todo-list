@@ -53,6 +53,23 @@ router.delete('/:taskId', (req, res) => {
         })
 }) // End DELETE response
 
+// Create PUT response to client side
+router.put('/:taskId', (req, res) => {
+    // create id for taskId to be used from client
+    let id = req.params.taskId;
+    console.log(`Using ${id} to update complete task...`);
+    let sqlText = `UPDATE todo SET complete='true' WHERE id=$1;`
+    pool.query(sqlText, [id])
+        .then((result) => {
+            // Send OK status to tell client side PUT
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('ERROR from db', error);
+            res.sendStatus(500);
+        })
+}) // End PUT response
+
 
 
 

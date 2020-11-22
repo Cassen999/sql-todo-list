@@ -9,6 +9,7 @@ APP NEEDS TO
     should say complete
 - [x] Deleting a task should delete it from db and DOM
 - CSS
+    - addClass();
     - Background color
     - Font family and size
     - Text and/or background color of complete tasks

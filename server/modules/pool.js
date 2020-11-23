@@ -4,7 +4,7 @@ const pg = require('pg');
 const Pool = pg.Pool;
 
 // Make our own instance of a Pool from that template Pool object
-let pool = {}
+// let pool = {}
 
 if (process.env.DATABASE_URL) {
     // Running remote (heroku)
@@ -23,7 +23,7 @@ if (process.env.DATABASE_URL) {
 }
 
 //Create the pool with the proper config
-const pool = new Pool(config);
+let pool = new Pool(config);
 
 // When we connect to the database, fun a function
 pool.on('connect', () => {

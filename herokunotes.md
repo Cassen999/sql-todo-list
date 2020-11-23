@@ -2,7 +2,7 @@
 - In terminal
 heroku create
 
--
+- If you need a remote
 
 - In terminal
 heroku addons:create heroku-postgresql:hobby-dev

@@ -13,7 +13,7 @@ if (process.env.DATABASE_URL) {
         ssl: {rejectUnauthorized: false}
     }
 } else {
-    confiv = {
+    config = {
         database: 'weekend-to-do-app', // Add in database name
         host: 'localhost', // connect to our local computer
         port: 5432, // port number, this is the default
